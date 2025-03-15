@@ -17,8 +17,8 @@
 #define NUM_GONDOLAS 10
 #define TAM_PRODUTO 10
 
-// Função para estocar um produto
-void estocar_produto(char estoque[NUM_RUAS][NUM_GONDOLAS][TAM_PRODUTO], char produto[TAM_PRODUTO], char rua, int gondola) {
+// Função para estocar um produto (usando ponteiros)
+void estocar_produto(char estoque[NUM_RUAS][NUM_GONDOLAS][TAM_PRODUTO], char *produto, char rua, int gondola) {
     int rua_index = rua - 'A'; // Convertendo a letra da rua para índice (A = 0, B = 1, C = 2)
     
     if (strlen(estoque[rua_index][gondola]) == 0) { // Se a posição estiver vazia
@@ -29,8 +29,8 @@ void estocar_produto(char estoque[NUM_RUAS][NUM_GONDOLAS][TAM_PRODUTO], char pro
     }
 }
 
-// Função para retirar um produto
-void retirar_produto(char estoque[NUM_RUAS][NUM_GONDOLAS][TAM_PRODUTO], char produto[TAM_PRODUTO]) {
+// Função para retirar um produto (usando ponteiros)
+void retirar_produto(char estoque[NUM_RUAS][NUM_GONDOLAS][TAM_PRODUTO], char *produto) {
     int encontrado = 0;
     for (int i = 0; i < NUM_RUAS; i++) {
         for (int j = 0; j < NUM_GONDOLAS; j++) {
@@ -48,7 +48,7 @@ void retirar_produto(char estoque[NUM_RUAS][NUM_GONDOLAS][TAM_PRODUTO], char pro
     }
 }
 
-// Função para exibir o menu de opções
+// Função para exibir o menu de opções (não precisa de ponteiro, pois só exibe texto)
 void exibir_menu() {
     printf("\nEscolha a operacao:\n");
     printf("1. Estocar produto\n");
@@ -57,7 +57,7 @@ void exibir_menu() {
     printf("Opcao: ");
 }
 
-// Função para inicializar o estoque (todas as gôndolas começam vazias)
+// Função para inicializar o estoque (não é necessário usar ponteiro aqui, pois passamos o array completo)
 void inicializar_estoque(char estoque[NUM_RUAS][NUM_GONDOLAS][TAM_PRODUTO]) {
     for (int i = 0; i < NUM_RUAS; i++) {
         for (int j = 0; j < NUM_GONDOLAS; j++) {
@@ -110,3 +110,4 @@ int main() {
     
     return 0;
 }
+
