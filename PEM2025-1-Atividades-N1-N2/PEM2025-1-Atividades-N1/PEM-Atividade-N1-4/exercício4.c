@@ -1,3 +1,14 @@
+/*-------------------------------------------------------*
+*                      FATEC Ipiranga                    *
+* Disciplina: Programaçao Estruturada e Modular          *
+*          Prof. Veríssimo                               *
+*--------------------------------------------------------*
+* Objetivo do Programa: Mostrar diretórios e recursi-    *
+* vidade                                                 *
+* Data - 27/03/2025                                      * 
+* Autor: Caio Fuschillo                                  *
+*--------------------------------------------------------*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <dirent.h>
